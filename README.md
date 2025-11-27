@@ -1,5 +1,7 @@
 # 🚗 ADAS 객체 인식 고도화 및 최적 모델 선정 (ADAS Object Detection Optimization)
 
+> **📄 [보고서 초안 보기 (Google Docs)](https://docs.google.com/document/d/1nMCta0tWIiho4jxHNot4u4Huj5E4hQVTAni4KGYlxBM/edit?usp=sharing)**
+
 ## 1. 프로젝트 개요 (Overview)
 본 프로젝트는 자율주행 ADAS 시스템을 위한 **고성능 2D 객체 인식 알고리즘 개발**을 목표로 합니다.
 KITTI 데이터셋을 기반으로 **① 극한의 정확도(mAP 0.95 목표)**와 **② 실시간성(20 FPS 이상)**을 동시에 달성하기 위해 CNN(YOLO)과 Transformer(RT-DETR) 등 다양한 SOTA 모델을 분석하고 최적화를 수행하였습니다.
@@ -15,7 +17,7 @@ KITTI 데이터셋을 기반으로 **① 극한의 정확도(mAP 0.95 목표)**�
 최적의 모델을 선정하기 위해 수행한 **총 8가지의 실험 조건과 결과**입니다.
 실패한 실험(ONNX, Augmentation)과 기각된 전략(Ensemble)까지 모두 기록하여 기술적 의사결정의 근거로 삼았습니다.
 
-| 구분 | 모델명 | 적용 전략 (Method) | mAP 50 | mAP 50-95 | FPS | 최종 평가 (Decision) |
+| 순번 | 실험 모델 | 적용 전략 (Method) | mAP 50 | mAP 50-95 | FPS | 최종 평가 (Decision) |
 | :--: | :--- | :--- | :---: | :---: | :---: | :--- |
 | 1 | **YOLOv8s** | **Baseline (SGD)** | **0.9068** | 0.6918 | **536** | **Pass (기준 만족)** |
 | 2 | YOLOv8s | Runtime (ONNX) | 0.9096 | 0.6905 | 181 | **Fail** (변환 오버헤드로 속도 저하) |
@@ -74,3 +76,11 @@ python src/final_ensemble.py
     * PyTorch 2.5 (CUDA 12.1 / MPS)
     * Ultralytics YOLO
     * Ensemble-Boxes
+
+---
+
+## 6. 📊 결과 예시 (Visualization)
+**최종 선정 모델 (RT-DETR) 추론 결과**
+
+![Result 1](assets/result1.png)
+![Result 2](assets/result2.png)
