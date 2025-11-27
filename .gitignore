@@ -1,0 +1,12 @@
+*.pt
+*.zip
+datasets/
+kitti/
+runs/
+res_train/
+1_Experiments/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+!assets/

@@ -1,4 +1,7 @@
-# 🚗 ADAS 객체 인식 고도화 및 최적 모델 선정 (ADAS Object Detection Optimization)
+import os
+
+# 깃허브 대문에 들어갈 내용 (완벽한 마크다운 포맷)
+readme_content = """# 🚗 ADAS 객체 인식 고도화 및 최적 모델 선정 (ADAS Object Detection Optimization)
 
 ## 1. 프로젝트 개요 (Overview)
 본 프로젝트는 자율주행 ADAS 시스템을 위한 **고성능 2D 객체 인식 알고리즘 개발**을 목표로 합니다.
@@ -48,20 +51,23 @@ KITTI 데이터셋을 기반으로 **① 극한의 정확도(mAP 0.95 목표)**�
 ## 4. 🚀 실행 방법 (How to Run)
 
 ### 1. 환경 설정
-\\ash
+\\\ash
 pip install -r requirements.txt
-\
+\\\
+
 ### 2. 최종 모델 시각화 (RT-DETR)
 최종 선정된 모델로 KITTI 데이터를 추론하고 결과를 시각화합니다.
-\\ash
+\\\ash
 # 소스 코드 폴더에 있는 시각화 스크립트 실행
 python src/final_predict.py
-\
+\\\
+
 ### 3. 앙상블 실험 재현 (선택 사항)
 우리가 수행했던 앙상블 실험을 재현하려면 아래 코드를 실행하세요.
-\\ash
+\\\ash
 python src/final_ensemble.py
-\
+\\\
+
 ---
 
 ## 5. 💻 개발 환경 (Environment)
@@ -74,3 +80,10 @@ python src/final_ensemble.py
     * PyTorch 2.5 (CUDA 12.1 / MPS)
     * Ultralytics YOLO
     * Ensemble-Boxes
+"""
+
+# 파일로 저장 (UTF-8 인코딩 필수)
+with open("README.md", "w", encoding="utf-8") as f:
+    f.write(readme_content)
+
+print("✅ README.md 파일 생성 완료!")

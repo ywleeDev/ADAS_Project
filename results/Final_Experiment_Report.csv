@@ -1,0 +1,10 @@
+﻿구분,모델명,mAP 50,mAP 50-95,FPS,평가
+Baseline,YOLOv8s,0.9068,0.6918,536,Pass
+최적화,YOLOv8s+ONNX,0.9096,0.6905,181,Fail
+튜닝,YOLOv8s+AdamW,0.9028,0.681,529,Hold
+스케일업,YOLOv11m,0.926,0.721,416,Good
+고성능,RT-DETR-L,0.933,0.718,97,🏆 Best
+고정밀,YOLOv11x,0.925,0.742,50,Good
+다양성,YOLOv9e,-,-,-,Ref
+앙상블,WBF Ensemble,0.9317,0.7323,31,Reject
+TTA,RT-DETR+TTA,0.9195,0.7094,39,Reject

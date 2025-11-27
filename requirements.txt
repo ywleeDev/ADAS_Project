@@ -1,0 +1,7 @@
+ultralytics
+ensemble-boxes
+torchmetrics
+pandas
+opencv-python
+scikit-learn
+tqdm

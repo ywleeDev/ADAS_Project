@@ -1,0 +1,21 @@
+# 데이터셋 및 대용량 파일 제외
+datasets/
+kitti/
+*.zip
+*.pt
+
+# 파이썬 캐시 제외
+__pycache__/
+*.pyc
+
+# 결과물 폴더 제외 (너무 많음)
+results/visualization/
+runs/
+res_train/
+
+# 시스템 파일 제외
+.DS_Store
+Thumbs.db
+
+# 단, README용 이미지는 허용 (!)
+!assets/
